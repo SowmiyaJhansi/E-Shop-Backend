@@ -47,3 +47,24 @@ import express from 'express'
             router.get('/all',findAllUsers)
 
             export default router
+
+            
+/* Test */
+it('should return true if valid user id', function(){
+    var isValid = userController.isValidUserId(['abc123','xyz321'], 'abc123')
+    assert.equal(isValid, true);
+});
+
+var assert = require('assert');
+var expect = require('chai').expect;
+var should = require('chai').should();
+it('should return true if valid user id', function(){
+      var isValid = userController.isValidUserId('abc123')
+      //assert.equal(isValid, true);
+      expect(isValid).to.be.true;
+});
+it('should return false if invalid user id', function(){
+      var isValid = userController.isValidUserId('abc1234')
+      //assert.equal(isValid, false);
+      isValid.should.equal(false);
+});

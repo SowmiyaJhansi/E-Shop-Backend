@@ -44,12 +44,23 @@ const User = require('../controllers/user');
 route.post('/auth', User.auth);
 
 route.post('/register', User.register);
-const signUp = req.body.signUp;
 
-const login = req.body.login;
+/* Test */
+it('should return true if valid user id', function(){
+    var isValid = userController.isValidUserId(['abc123','xyz321'], 'abc123')
+    assert.equal(isValid, true);
+});
 
-const logout = req.body.logout;
-
-const getDiscountCode  = req.body.getDiscountCode ;
-
-const bookPdt  = req.body.bookPdt ;
+var assert = require('assert');
+var expect = require('chai').expect;
+var should = require('chai').should();
+it('should return true if valid user id', function(){
+      var isValid = userController.isValidUserId('abc123')
+      //assert.equal(isValid, true);
+      expect(isValid).to.be.true;
+});
+it('should return false if invalid user id', function(){
+      var isValid = userController.isValidUserId('abc1234')
+      //assert.equal(isValid, false);
+      isValid.should.equal(false);
+});
