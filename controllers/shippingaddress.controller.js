@@ -1,0 +1,45 @@
+var shippingAddress = require('../models/shippingAddress');
+
+exports.id = function(req, res) {
+    res.send('NOT IMPLEMENTED: Artist id');
+};
+
+exports.city = function(req, res) {
+    res.send('NOT IMPLEMENTED:  city');
+};
+
+exports.landmark= function(req, res) {
+    res.send('NOT IMPLEMENTED:  landmark');
+};
+
+exports.name = function(req, res) {
+    res.send('NOT IMPLEMENTED:  name');
+};
+
+exports.phone = function(req, res) {
+    res.send('NOT IMPLEMENTED:  phone');
+};
+
+exports.state = function(req, res) {
+    res.send('NOT IMPLEMENTED:  state');
+};
+
+exports.street = function(req, res) {
+    res.send('NOT IMPLEMENTED:  street');
+};
+
+exports.zipCode = function(req, res) {
+    res.send('NOT IMPLEMENTED:  zipCode');
+};
+
+exports.user_id = function(req, res) {
+    res.send('NOT IMPLEMENTED:  user_id');
+};
+
+import express from 'express'
+            const router=express.Router()
+            import { findAllUsers } from '../../controllers/user.js'
+
+            router.get('/all',findAllUsers)
+
+            export default router
